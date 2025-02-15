@@ -43,7 +43,7 @@ body {
 
 #start,
 #pause,
-#stop,
+#reset,
 #skip {
     background-color: var(--color-dark2);
     color: var(--color-white);
@@ -56,7 +56,7 @@ body {
 
 #start:hover,
 #pause:hover,
-#stop:hover,
+#reset:hover,
 #skip:hover {
     background-color: var(--color-dark3);
 }

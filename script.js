@@ -52,15 +52,37 @@ function startTimer () {
 }
 
 function pauseTimer() {
-    
+    clearInterval(timer)
+    isRunning = false
 }
 
 function resetTimer() {
-    
+    clearInterval(timer)
+    timeLeft = 25 * 60
+    isWorkTime = true
+    count = 0
+    pomodoroCountDisplay.textContent = count
+    updateTimerDisplay()
 }
 
 function skipTimer() {
-    
+    clearInterval(timer)
+    isRunning = false
+
+    if (isWorkTime) {
+        count++
+        pomodoroCountDisplay.textContent = count
+        if (count % 4 === 0) {
+            timeLeft = 15 * 60
+        } else {
+            timeLeft = 5 * 60
+        }
+    } else {
+        timeLeft = 25 * 60
+    }
+
+    isWorkTime = !isWorkTime
+    updateTimerDisplay()
 }
 
 startButton.addEventListener('click', startTimer)
